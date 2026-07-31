@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Chat";
+}
+
+<p>This is the message</p>
+<input type="text" id="userInput" placeholder="Your Name"  />
+<input type="text" id="messageInput" placeholder="Your Message" />
+<button id="sendButton">Send</button>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+
+<script>
+
+    //Builds a connection object pointing at the hub endpoint "/chatHub"
+    // the URL will register in Program.cs file as (app.MapHub<ChatHub>("/chatHub");))
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/chatHub")
+        .build();
+
+
+    /* 
+    "RecievedMessage" must match the name of the method in the hub class (ChatHub.cs) that is sending the message to the client.
+    It should look like this in the hub class: 
+    public async Task SendMessage(string user, string message)
+    {
+        await Clients.All.SendAsync("RecievedMessage", user, message);
+    }
+    */
+    connection.on("RecievedMessage", function(user, message) {
+        const li = document.createElement("li"); // create a new list item element
+        li.textContent = `${user}: ${message}`; // set the text content of the list item
+        document.getElementById("messagesList").appendChild(li); // append the new list item to the messages list
+    });
+
+    // Actually starts the connection to the hub. If it fails, it will log the error to the console.
+    connection.start().catch(function(err) 
+    {
+        console.error(err)
+    });
+
+
+    document.getElementById("sendButton").addEventListener("click", function(event) 
+    {
+        const user = document.getElementById("userInput").value; // get the value of the user input field
+        const message = document.getElementById("messageInput").value; // get the value of the message input field
+
+        connection.invoke("SendMessage", user, message).catch(function(err) // invoke the SendMessage method on the hub with the user and message as parameters
+        {
+            console.error(err.toString()); // log any errors that occur when invoking the SendMessage method
+        }); 
+
+        document.getElementById("messageInput").value = ""; // clear the message input field after sending")
+
+    
+     });
+        
+
+
+</script>
