@@ -30,9 +30,25 @@ body {
   text-align: start;
 }
 
+.Input{
+    margin-top: 20px;
+    width: 200px;
+}
+
+#sendButton{
+    background-color: greenyellow;
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px;
+    margin-top: 40px;
+     
+}
+
 #chatContainer {
+    
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  
     justify-content: center;
     align-items: center;
+
 }
