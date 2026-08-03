@@ -7,13 +7,13 @@ namespace ChatApp.Controllers
 
         public IActionResult Login()
         {
-            return Content ("Login Page"); 
+            return View(); 
         }
 
         
         public IActionResult Register()
         {
-            return Content("Register Page");
+            return View();
         }
     }
 }
