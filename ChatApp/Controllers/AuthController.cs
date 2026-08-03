@@ -4,9 +4,16 @@ namespace ChatApp.Controllers
 {
     public class AuthController : Controller
     {
-        public IActionResult Index()
+
+        public IActionResult Login()
         {
-            return View();
+            return Content ("Login Page"); 
+        }
+
+        
+        public IActionResult Register()
+        {
+            return Content("Register Page");
         }
     }
 }
