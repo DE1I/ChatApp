@@ -1,5 +1,19 @@
 ﻿@{
     ViewData["Title"] = "Login";
+    Layout = "_AuthLayout";
 }
 
-<p>hello This is the Login</p>
+@section styles {
+    <link rel="stylesheet" href="~/css/auth.css" />
+} 
+
+<div class="authContainer" id="loginContainer">
+    <h1>Login</h1>
+    <input type="text" class="authInput" id="usernameInput" placeholder="Username" />
+    <input type="password" class="authInput" id="passwordInput" placeholder="Password" />
+    <button class="authButton" id="loginButton">Login</button>
+</div> 
+
+@section Scripts {
+
+}

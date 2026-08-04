@@ -1,5 +1,17 @@
 ﻿@{
     ViewData["Title"] = "Register";
+    Layout = "_AuthLayout";
 }
 
-<p>Helloo THis is the Register</p>
+@section styles {
+    <link rel="stylesheet" href="~/css/auth.css" />
+}
+
+<div class="authContainer" id="registerContainer">
+<h1>Register</h1>
+    <input type="text" class="authInput" id="usernameInput" placeholder="Username" />
+    <input type="password" class="authInput" id="passwordInput" placeholder="Password" />
+    <input type="password" class="authInput" id="confirmPasswordInput" placeholder="Confirm Password" />
+    <button class="authButton" id="registerButton">Register</button>
+</div>
+
