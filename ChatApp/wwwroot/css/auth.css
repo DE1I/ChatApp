@@ -27,6 +27,11 @@ body {
     margin-top: 10px;
 }
 
-.authInput{
+.authInput {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 20px;
+    outline: none;
     margin-bottom: 10px;
-}
+ } 
