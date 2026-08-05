@@ -25,7 +25,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ChatMessage}/{action=Index}/{id?}")
+    pattern: "{controller=Auth}/{action=Login}/{id?}")
     .WithStaticAssets();
 
 app.MapHub<ChatHub>("/chathub"); // This line maps the ChatHub class to the "/chathub" URL path, allowing clients to connect to the SignalR hub at that endpoint for real-time communication.

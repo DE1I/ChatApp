@@ -23,6 +23,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0.1, 0.1, 0.1);
     background-color: #fff;
 }
+
 .authButton{
     margin-top: 10px;
     border: 1px solid #ccc;
@@ -30,7 +31,19 @@ body {
     padding: 8px;
     border-radius: 4px;
     width: 200px;
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease; 
 }
+
+.authButton:hover {
+    transform: translateY(-2px);
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+    .authButton:active {
+        background-color: sandybrown;
+        color: floralwhite;
+        transform: scale(0.96);
+    }
 
 .authInput {
     border: 1px solid #ccc;

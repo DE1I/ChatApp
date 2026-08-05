@@ -9,5 +9,11 @@ namespace ChatApp.Controllers
             return View(); // "View()" tells ASP.NET Core: "find the .cshtml file that matches
         }
 
+
+        public IActionResult LandingPage()
+        {
+            return View();
+        }
+
     }
 }
