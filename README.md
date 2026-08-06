@@ -6,6 +6,13 @@ Gather round the fire, walk up to a friend to start talking, drop a song in the 
 
 ---
 
+## 👋 About This Project
+
+Yaply is a solo passion project built by me as a way to actually learn ASP.NET MVC by doing, rather than just reading docs or following tutorials. I'm just new with MVC so
+expect things to be rough around the edges in places, well, that's kind of the point. If you're also learning MVC and want to follow along, poke through the code, or suggest improvements, you're welcome to.
+
+---
+
 ## ✨ Features
 
 - **Campgrounds** — themed 2-bit rooms where users can walk around, talk, and hang out together in a shared space.
